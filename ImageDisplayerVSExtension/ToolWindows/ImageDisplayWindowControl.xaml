@@ -11,7 +11,7 @@
              Name="MyToolWindow">
     <Grid>
         <StackPanel Orientation="Vertical">
-            <Button Name="uploadButton" Click="button1_UploadImage">
+            <Button Name="uploadButton" Click="button1_UploadImage" MinHeight="50" MinWidth="50">
                 <Image Name="imageToDisplay" />
             </Button>
         </StackPanel>

@@ -28,26 +28,33 @@ namespace ImageDisplayerVSExtension.ToolWindows
         /// <param name="e">The event args.</param>
         private void button1_UploadImage(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.DefaultExt = ".png";
-            //fileDialog.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|Portable Network Graphic (*.png)|*.png";
-            //fileDialog.Filter = "Images (.png)|*.png"; // Optional file extensions
-
-            if (fileDialog.ShowDialog() != DialogResult.OK)
+            OpenFileDialog fileDialog = new OpenFileDialog
             {
-                System.Windows.MessageBox.Show("Image is not uploaded. Try another one", "ImageDisplayWindow");
-                return;
-            }
+                DefaultExt = ".png",
+                Filter = "All supported graphics|*.jpg;*.jpeg;*.png;*.gif|Animations (*.gif)|*.gif"
+            };
 
-            SetImage(fileDialog);
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                SetImage(fileDialog);
+                // TODO: store somewhere elso to keep image for later.
+            }
         }
 
         private void SetImage(OpenFileDialog fileDialog)
         {
-            // TODO: store somewhere elso to keep image for later.
-
-            imageToDisplay.Source = new BitmapImage(new Uri(fileDialog.FileName));
             fullPath = fileDialog.FileName;
+            var image = new BitmapImage(new Uri(fileDialog.FileName));
+
+            if (fileDialog.FileName.EndsWith(".gif"))
+            {
+                imageToDisplay.Source = null;
+                //ImageBehavior.SetAnimatedSource(imageToDisplay, image);
+            }
+            else
+            {
+                imageToDisplay.Source = image;
+            }
         }
     }
 }
