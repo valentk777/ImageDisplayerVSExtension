@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Forms;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using WpfAnimatedGif;
 
 namespace ImageDisplayerVSExtension.ToolWindows
 {
@@ -49,7 +50,7 @@ namespace ImageDisplayerVSExtension.ToolWindows
             if (fileDialog.FileName.EndsWith(".gif"))
             {
                 imageToDisplay.Source = null;
-                //ImageBehavior.SetAnimatedSource(imageToDisplay, image);
+                ImageBehavior.SetAnimatedSource(imageToDisplay, image);
             }
             else
             {
