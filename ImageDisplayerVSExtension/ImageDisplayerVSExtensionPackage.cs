@@ -26,6 +26,7 @@ namespace ImageDisplayerVSExtension
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
     [Guid(ImageDisplayerVSExtensionPackage.PackageGuidString)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
+    [ProvideToolWindow(typeof(ImageDisplayerVSExtension.ToolWindows.ImageDisplayWindow))]
     public sealed class ImageDisplayerVSExtensionPackage : AsyncPackage
     {
         /// <summary>
@@ -47,6 +48,7 @@ namespace ImageDisplayerVSExtension
             // When initialized asynchronously, the current thread may be a background thread at this point.
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+            await ImageDisplayerVSExtension.ToolWindows.ImageDisplayWindowCommand.InitializeAsync(this);
         }
 
         #endregion
