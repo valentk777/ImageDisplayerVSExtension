@@ -26,4 +26,11 @@ Then press on the white section (maybe later I will improve that part) and selec
 And that is it!
 
 ## Support
-This extension supports multiple image formats like png, jpg, and animation format - gif.
+This extension supports multiple image formats (.jpg, .jpeg, .png), and animation format - .gif.
+
+## CI/CD
+I use appveyor for CI/CD builds and releases
+![appveyor](https://ci.appveyor.com/project/valentk777/imagedisplayervsextension)
+
+## License
+[Apache 2.0](LICENSE)

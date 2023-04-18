@@ -74,6 +74,7 @@
       <Link>Resource\LICENSE</Link>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
+    <Content Include="Resource\icon.png" />
     <Content Include="Resource\press-here.jpg" />
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>

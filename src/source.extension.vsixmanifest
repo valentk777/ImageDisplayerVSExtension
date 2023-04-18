@@ -3,11 +3,12 @@
     <Metadata>
         <Identity Id="8864c6b6-57eb-408e-9507-33e1debf80be" Version="1.0" Language="en-US" Publisher="Valentinas Kaminskas (valentk777)" />
         <DisplayName>ImageDisplayer</DisplayName>
-        <Description xml:space="preserve">This extension display your selected static (jpg, png,...) image or animated image (gif).This exteThis app </Description>
+        <Description xml:space="preserve">This is a VisualStudio extension to display your selected image or gif inside VisualStudio.
+This extension supports multiple image formats (.jpg, .jpeg, .png), and animation format - .gif.</Description>
         <MoreInfo>https://github.com/valentk777/ImageDisplayerVSExtension</MoreInfo>
         <License>Resource\LICENSE</License>
-        <Icon>Icons\window.icon.48.48.png</Icon>
-        <PreviewImage>Icons\window.icon.48.48.png</PreviewImage>
+        <Icon>Resource\icon.png</Icon>
+        <PreviewImage>Resource\icon.png</PreviewImage>
     </Metadata>
     <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
