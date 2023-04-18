@@ -15,7 +15,7 @@ Check it out - a demo to see the extension functionality
 ## How to use
 You can add this extension the same way as all regular VS extensions.
 
-After installation, select View -> Other Windows -> DisplayImage.
+After installation, select View -> Other Windows -> Display Image.
 
 ![view location](https://github.com/valentk777/ImageDisplayerVSExtension/blob/main/Documentation/location.png?raw=true)
 

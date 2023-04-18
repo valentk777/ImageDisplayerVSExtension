@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.Shell;
+﻿using Microsoft.VisualStudio;
+using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
 using System;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -27,6 +29,12 @@ namespace ImageDisplayer
     [Guid(PackageGuidString)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [ProvideToolWindow(typeof(ToolWindows.ImageDisplayWindow))]
+    [ProvideToolWindow(typeof(ToolWindows.ImageDisplayWindow), Style = VsDockStyle.Tabbed, Window = ToolWindowGuids.ContextWindow)]
+    [ProvideToolWindowVisibility(typeof(ToolWindows.ImageDisplayWindow), VSConstants.UICONTEXT.NoSolution_string)]
+    [ProvideToolWindowVisibility(typeof(ToolWindows.ImageDisplayWindow), VSConstants.UICONTEXT.NoSolution_string)]
+    [ProvideToolWindowVisibility(typeof(ToolWindows.ImageDisplayWindow), VSConstants.UICONTEXT.SolutionHasSingleProject_string)]
+    [ProvideToolWindowVisibility(typeof(ToolWindows.ImageDisplayWindow), VSConstants.UICONTEXT.SolutionHasMultipleProjects_string)]
+    [ProvideToolWindowVisibility(typeof(ToolWindows.ImageDisplayWindow), VSConstants.UICONTEXT.EmptySolution_string)]
     public sealed class ImageDisplayerPackage : AsyncPackage
     {
         /// <summary>
