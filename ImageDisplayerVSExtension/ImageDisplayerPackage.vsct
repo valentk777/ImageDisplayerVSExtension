@@ -54,22 +54,14 @@
           If you do not want an image next to your command, remove the Icon node /> -->
       <Button guid="guidImageDisplayerPackageCmdSet" id="cmdidImageDisplayWindowCommand" priority="0x0100" type="Button">
         <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1" />
-        <Icon guid="guidImages" id="bmpPic1" />
+        <Icon guid="MyImages" id="window" />
+          <CommandFlag>IconIsMoniker</CommandFlag>
         <Strings>
           <ButtonText>Display Image</ButtonText>
         </Strings>
       </Button>
     </Buttons>
 
-    <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
-    <Bitmaps>
-      <!--  The bitmap id is defined in a way that is a little bit different from the others:
-            the declaration starts with a guid for the bitmap strip, then there is the resource id of the
-            bitmap strip containing the bitmaps and then there are the numeric ids of the elements used
-            inside a button definition. An important aspect of this declaration is that the element id
-            must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
-      <Bitmap guid="guidImages" href="ToolWindows\Resources\window.icon.16.16.png" usedList="bmpPic1" />
-    </Bitmaps>
   </Commands>
 
   <Symbols>
@@ -83,9 +75,10 @@
       <IDSymbol value="4129" name="cmdidMyWindowCommand" />
       <IDSymbol value="4130" name="cmdidImageDisplayWindowCommand" />
     </GuidSymbol>
-  
-    <GuidSymbol value="{739b68be-e387-40d1-9746-fd6ed85edb9e}" name="guidImages">
-      <IDSymbol name="bmpPic1" value="1" />
+
+    <GuidSymbol name="MyImages" value="{92faab66-5cb5-4901-88c5-90181f124951}">
+        <IDSymbol name="window" value="1"/>
     </GuidSymbol>
+      
   </Symbols>
 </CommandTable>
