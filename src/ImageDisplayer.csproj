@@ -81,6 +81,9 @@
     <Content Include="Resource\press-here.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="..\appveyor.yml">
+      <Link>appveyor.yml</Link>
+    </None>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
       <Generator>VsixManifestGenerator</Generator>

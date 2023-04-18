@@ -1,5 +1,8 @@
 # ImageDisplayerVSExtension
 
+![Published](https://www.vsixgallery.com/extension/8864c6b6-57eb-408e-9507-33e1debf80be)
+
+
 ## Concept
 
 This is a VisualStudio extension to display your selected image or gif inside VisualStudio.
@@ -25,12 +28,15 @@ Then press on the white section (maybe later I will improve that part) and selec
 
 And that is it!
 
+
 ## Support
 This extension supports multiple image formats (.jpg, .jpeg, .png), and animation format - .gif.
+
 
 ## CI/CD
 I use appveyor for CI/CD builds and releases
 ![appveyor](https://ci.appveyor.com/project/valentk777/imagedisplayervsextension)
+
 
 ## License
 [Apache 2.0](LICENSE)
