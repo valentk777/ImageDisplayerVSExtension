@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageDisplayer", "ImageDisplayerVSExtension\ImageDisplayer.csproj", "{730AA0FA-8CC7-46B7-BB09-044844C1D41F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageDisplayer", "src\ImageDisplayer.csproj", "{730AA0FA-8CC7-46B7-BB09-044844C1D41F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8709F53F-39CA-4729-BDE8-E7E5219DD6A2}"
 	ProjectSection(SolutionItems) = preProject

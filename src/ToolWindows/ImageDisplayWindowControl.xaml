@@ -8,13 +8,14 @@
              xmlns:local="clr-namespace:ImageDisplayer"
              local:VsTheme.UseVsTheme="True"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300"
+             d:DesignWidth="300"
              Name="MyToolWindow">
     <Grid>
         <StackPanel Orientation="Vertical">
             <Button Name="uploadButton" Click="button1_UploadImage" MinHeight="50" MinWidth="50">
-                <Image Name="imageToDisplay" />
+                <Image Name="imageToDisplay" Source="Resources/press-here.jpg" />
             </Button>
         </StackPanel>
     </Grid>
+    
 </UserControl>

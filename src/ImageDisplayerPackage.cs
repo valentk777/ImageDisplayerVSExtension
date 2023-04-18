@@ -25,7 +25,8 @@ namespace ImageDisplayer
     /// </para>
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [Guid(PackageGuidString)]
+    [Guid(PackageGuids.guidImageDisplayerPackageString)]
+    [InstalledProductRegistration(Vsix.Name, Vsix.Description, Vsix.Version)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [ProvideToolWindow(typeof(ToolWindows.ImageDisplayWindow))]
     [ProvideToolWindowVisibility(typeof(ToolWindows.ImageDisplayWindow), VSConstants.UICONTEXT.NoSolution_string)]
@@ -34,13 +35,6 @@ namespace ImageDisplayer
     [ProvideToolWindowVisibility(typeof(ToolWindows.ImageDisplayWindow), VSConstants.UICONTEXT.EmptySolution_string)]
     public sealed class ImageDisplayerPackage : AsyncPackage
     {
-        /// <summary>
-        /// ImageDisplayerPackage GUID string.
-        /// </summary>
-        public const string PackageGuidString = "cfd2f0a6-24d9-4998-9e71-91bcd4f291cf";
-
-        #region Package Members
-
         /// <summary>
         /// Initialization of the package; this method is called right after the package is sited, so this is the place
         /// where you can put all the initialization code that rely on services provided by VisualStudio.
@@ -55,7 +49,5 @@ namespace ImageDisplayer
             await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await ToolWindows.ImageDisplayWindowCommand.InitializeAsync(this);
         }
-
-        #endregion
     }
 }

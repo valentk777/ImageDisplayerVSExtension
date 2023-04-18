@@ -6,47 +6,41 @@ using WpfAnimatedGif;
 
 namespace ImageDisplayer.ToolWindows
 {
-    /// <summary>
-    /// Interaction logic for ImageDisplayWindowControl.
-    /// </summary>
     public partial class ImageDisplayWindowControl : System.Windows.Controls.UserControl
     {
-        private string fullPath;
+        private string fullPath = "press-here.jpg";
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ImageDisplayWindowControl"/> class.
-        /// </summary>
         public ImageDisplayWindowControl()
         {
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Handles click on the image upload button to store uploaded image.
-        /// </summary>
-        /// <param name="sender">The event sender.</param>
-        /// <param name="e">The event args.</param>
         private void button1_UploadImage(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog fileDialog = new OpenFileDialog
+            SetFilePathOnUploadImage();
+            UpdateUIImage();
+            SaveProvidedImage();
+        }
+
+        private void SetFilePathOnUploadImage()
+        {
+            var fileDialog = new OpenFileDialog
             {
-                DefaultExt = ".png",
+                DefaultExt = ".jpg",
                 Filter = "All supported graphics|*.jpg;*.jpeg;*.png;*.gif|Animations (*.gif)|*.gif"
             };
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                SetImage(fileDialog);
-                // TODO: store somewhere elso to keep image for later.
+                fullPath = fileDialog.FileName;
             }
         }
 
-        private void SetImage(OpenFileDialog fileDialog)
+        private void UpdateUIImage()
         {
-            fullPath = fileDialog.FileName;
-            var image = new BitmapImage(new Uri(fileDialog.FileName));
+            var image = new BitmapImage(new Uri(fullPath));
 
-            if (fileDialog.FileName.EndsWith(".gif"))
+            if (fullPath.EndsWith(".gif"))
             {
                 imageToDisplay.Source = null;
                 ImageBehavior.SetAnimatedSource(imageToDisplay, image);
@@ -55,6 +49,11 @@ namespace ImageDisplayer.ToolWindows
             {
                 imageToDisplay.Source = image;
             }
+        }
+
+        private void SaveProvidedImage()
+        {
+
         }
     }
 }
