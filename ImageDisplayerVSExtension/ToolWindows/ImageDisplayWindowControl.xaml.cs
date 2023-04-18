@@ -5,7 +5,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using WpfAnimatedGif;
 
-namespace ImageDisplayerVSExtension.ToolWindows
+namespace ImageDisplayer.ToolWindows
 {
     /// <summary>
     /// Interaction logic for ImageDisplayWindowControl.
@@ -19,7 +19,7 @@ namespace ImageDisplayerVSExtension.ToolWindows
         /// </summary>
         public ImageDisplayWindowControl()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         /// <summary>

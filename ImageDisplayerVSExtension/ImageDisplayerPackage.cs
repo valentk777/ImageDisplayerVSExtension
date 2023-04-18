@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using Task = System.Threading.Tasks.Task;
 
-namespace ImageDisplayerVSExtension
+namespace ImageDisplayer
 {
     /// <summary>
     /// This is the class that implements the package exposed by this assembly.
@@ -24,13 +24,13 @@ namespace ImageDisplayerVSExtension
     /// </para>
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [Guid(ImageDisplayerVSExtensionPackage.PackageGuidString)]
+    [Guid(PackageGuidString)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    [ProvideToolWindow(typeof(ImageDisplayerVSExtension.ToolWindows.ImageDisplayWindow))]
-    public sealed class ImageDisplayerVSExtensionPackage : AsyncPackage
+    [ProvideToolWindow(typeof(ToolWindows.ImageDisplayWindow))]
+    public sealed class ImageDisplayerPackage : AsyncPackage
     {
         /// <summary>
-        /// ImageDisplayerVSExtensionPackage GUID string.
+        /// ImageDisplayerPackage GUID string.
         /// </summary>
         public const string PackageGuidString = "cfd2f0a6-24d9-4998-9e71-91bcd4f291cf";
 
@@ -47,8 +47,8 @@ namespace ImageDisplayerVSExtension
         {
             // When initialized asynchronously, the current thread may be a background thread at this point.
             // Do any initialization that requires the UI thread after switching to the UI thread.
-            await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
-            await ImageDisplayerVSExtension.ToolWindows.ImageDisplayWindowCommand.InitializeAsync(this);
+            await JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
+            await ToolWindows.ImageDisplayWindowCommand.InitializeAsync(this);
         }
 
         #endregion

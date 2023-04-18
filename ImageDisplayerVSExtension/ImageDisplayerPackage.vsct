@@ -22,7 +22,7 @@
 
   <!--The Commands section is where commands, menus, and menu groups are defined.
       This section uses a Guid to identify the package that provides the command defined inside it. -->
-  <Commands package="guidImageDisplayerVSExtensionPackage">
+  <Commands package="guidImageDisplayerPackage">
     <!-- Inside this section we have different sub-sections: one for the menus, another
     for the menu groups, one for the buttons (the actual commands), one for the combos
     and the last one for the bitmaps used. Each element is identified by a command id that
@@ -36,7 +36,7 @@
          group as the part of a menu contained between two lines. The parent of a group
          must be a menu. -->
     <Groups>
-      <Group guid="guidImageDisplayerVSExtensionPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+      <Group guid="guidImageDisplayerPackageCmdSet" id="MyMenuGroup" priority="0x0600">
         <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS" />
       </Group>
     </Groups>
@@ -52,7 +52,7 @@
               <CommandFlag>DefaultInvisible</CommandFlag>
               <CommandFlag>DynamicVisibility</CommandFlag>
           If you do not want an image next to your command, remove the Icon node /> -->
-      <Button guid="guidImageDisplayerVSExtensionPackageCmdSet" id="cmdidImageDisplayWindowCommand" priority="0x0100" type="Button">
+      <Button guid="guidImageDisplayerPackageCmdSet" id="cmdidImageDisplayWindowCommand" priority="0x0100" type="Button">
         <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1" />
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
@@ -74,10 +74,10 @@
 
   <Symbols>
     <!-- This is the package guid. -->
-    <GuidSymbol name="guidImageDisplayerVSExtensionPackage" value="{cfd2f0a6-24d9-4998-9e71-91bcd4f291cf}" />
+    <GuidSymbol name="guidImageDisplayerPackage" value="{cfd2f0a6-24d9-4998-9e71-91bcd4f291cf}" />
 
     <!-- This is the guid used to group the menu commands together -->
-    <GuidSymbol name="guidImageDisplayerVSExtensionPackageCmdSet" value="{e08427b5-7453-4f3e-83cb-1d41d7d71370}">
+    <GuidSymbol name="guidImageDisplayerPackageCmdSet" value="{e08427b5-7453-4f3e-83cb-1d41d7d71370}">
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="FirstCommandId" value="0x0100" />
       <IDSymbol value="4129" name="cmdidMyWindowCommand" />

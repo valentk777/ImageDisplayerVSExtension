@@ -13,8 +13,8 @@
     <ProjectGuid>{730AA0FA-8CC7-46B7-BB09-044844C1D41F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ImageDisplayerVSExtension</RootNamespace>
-    <AssemblyName>ImageDisplayerVSExtension</AssemblyName>
+    <RootNamespace>ImageDisplayer</RootNamespace>
+    <AssemblyName>ImageDisplayer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
     <UseCodebase>true</UseCodebase>
@@ -46,7 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ImageDisplayerVSExtensionPackage.cs" />
+    <Compile Include="ImageDisplayerPackage.cs" />
     <Compile Include="ToolWindows\ImageDisplayWindow.cs" />
     <Compile Include="ToolWindows\ImageDisplayWindowCommand.cs" />
     <Compile Include="ToolWindows\ImageDisplayWindowControl.xaml.cs">
@@ -54,6 +54,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Monikers.imagemanifest">
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
@@ -83,7 +86,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <VSCTCompile Include="ImageDisplayerVSExtensionPackage.vsct">
+    <VSCTCompile Include="ImageDisplayerPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
     </VSCTCompile>
   </ItemGroup>
@@ -94,11 +97,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="ToolWindows\Icons\window.icon.16.16.png" />
+    <Resource Include="ToolWindows\Icons\window.icon.24.24.png" />
+    <Resource Include="ToolWindows\Icons\window.icon.32.32.png" />
+    <Resource Include="ToolWindows\Icons\window.icon.48.48.png" />
     <Content Include="ToolWindows\Resources\window.icon.16.16.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ToolWindows\Icons\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

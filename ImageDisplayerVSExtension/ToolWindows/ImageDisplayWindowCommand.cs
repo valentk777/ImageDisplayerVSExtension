@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Task = System.Threading.Tasks.Task;
 
-namespace ImageDisplayerVSExtension.ToolWindows
+namespace ImageDisplayer.ToolWindows
 {
     /// <summary>
     /// Command handler
@@ -41,7 +41,7 @@ namespace ImageDisplayerVSExtension.ToolWindows
             commandService = commandService ?? throw new ArgumentNullException(nameof(commandService));
 
             var menuCommandID = new CommandID(CommandSet, CommandId);
-            var menuItem = new MenuCommand(this.Execute, menuCommandID);
+            var menuItem = new MenuCommand(Execute, menuCommandID);
             commandService.AddCommand(menuItem);
         }
 
@@ -57,11 +57,11 @@ namespace ImageDisplayerVSExtension.ToolWindows
         /// <summary>
         /// Gets the service provider from the owner package.
         /// </summary>
-        private Microsoft.VisualStudio.Shell.IAsyncServiceProvider ServiceProvider
+        private IAsyncServiceProvider ServiceProvider
         {
             get
             {
-                return this.package;
+                return package;
             }
         }
 
@@ -86,9 +86,9 @@ namespace ImageDisplayerVSExtension.ToolWindows
         /// <param name="e">The event args.</param>
         private void Execute(object sender, EventArgs e)
         {
-            this.package.JoinableTaskFactory.RunAsync(async delegate
+            package.JoinableTaskFactory.RunAsync(async delegate
             {
-                ToolWindowPane window = await this.package.ShowToolWindowAsync(typeof(ImageDisplayWindow), 0, true, this.package.DisposalToken);
+                ToolWindowPane window = await package.ShowToolWindowAsync(typeof(ImageDisplayWindow), 0, true, package.DisposalToken);
                 if ((null == window) || (null == window.Frame))
                 {
                     throw new NotSupportedException("Cannot create tool window");
