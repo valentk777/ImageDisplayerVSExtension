@@ -125,18 +125,18 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icons\window.icon.16.16.png">
+    <Content Include="Icons\window.icon.16.16.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\window.icon.24.24.png">
+    </Content>
+    <Content Include="Icons\window.icon.24.24.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\window.icon.32.32.png">
+    </Content>
+    <Content Include="Icons\window.icon.32.32.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Icons\window.icon.48.48.png">
+    </Content>
+    <Content Include="Icons\window.icon.48.48.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
