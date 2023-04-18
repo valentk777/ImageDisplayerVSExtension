@@ -5,6 +5,7 @@
         <DisplayName>ImageDisplayer</DisplayName>
         <Description xml:space="preserve">This extension display your selected static (jpg, png,...) image or animated image (gif).This exteThis app </Description>
         <MoreInfo>https://github.com/valentk777/ImageDisplayerVSExtension</MoreInfo>
+        <License>Resource\LICENSE</License>
         <Icon>Icons\window.icon.48.48.png</Icon>
         <PreviewImage>Icons\window.icon.48.48.png</PreviewImage>
     </Metadata>
